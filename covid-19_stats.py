@@ -34,7 +34,7 @@ def srch(update, context):
     f=0
     print("Searched : "+str(p))
     while i <= len(c)-14:
-        if(p.casefold()==c[i].casefold()) :
+        if(p.casefold()==c[i].casefold() or p.casefold() in c[i].casefold()) :
             
             context.bot.send_message(chat_id=update.effective_chat.id, text="Country: "+str(c[i])+"\nActive Cases : "+str(c[i+6])+"\nTotal critical cases : "+str(c[i+7])+"\nTotal recovered : "+str(c[i+5])+"\nTotal Cases : "+str(c[i+1])+"\nTotal Deaths : "+str(c[i+3])+"\nTotal Tests : "+str(c[i+10]))
             f=1
